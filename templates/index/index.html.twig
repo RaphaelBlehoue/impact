@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Impact-performances | Bienvenue' }}{% endblock %}
+
+{% block body %}
+    {{ include('includes/slide.html.twig') }}
+<section id="content">
+    <div class="content-wrap nobottompadding" style="z-index: 1;">
+        <!-- What we do
+        ============================================= -->
+        {{ include('includes/page_block/what_we_do.html.twig') }}
+        <!-- How We Work
+        ============================================= -->
+        {{ include('includes/page_block/how_we_work.html.twig') }}
+        <!-- About Us
+        ============================================= -->
+        {{ include('includes/page_block/about_us.html.twig') }}
+        <!-- Our Works
+         ============================================= -->
+        {{ include('includes/page_block/our_work.html.twig') }}
+        <!-- Video Sections
+        ============================================= -->
+        {{ include('includes/page_block/video_custom.html.twig') }}
+
+        <!-- Témoignage
+        ============================================= -->
+        {{ include('includes/page_block/tesmin.html.twig') }}
+        <!-- Brands Carousel
+        ============================================= -->
+        {{ include('includes/page_block/partners.html.twig') }}
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('build/front/js/main.js', 'front') }}"></script>
+{% endblock %}

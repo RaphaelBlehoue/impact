@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('build/global/css/bootstrap.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('build/front/css/impact.css','front') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('build/front/css/app.css','front') }}" type="text/css" />
+    {% block stylesheets %}{% endblock %}
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body class="stretched">
+<div id="wrapper" class="clearfix">
+    {{ include('includes/nav.html.twig') }}
+    {% block body %}{% endblock %}
+    {{ include('includes/footer.html.twig') }}
+</div>
+<div id="gotoTop" class="icon-angle-up"></div>
+<script src="{{ asset('build/global/js/jquery.js') }}"></script>
+<script src="{{ asset('build/global/js/plugins.js') }}"></script>
+<script src="{{ asset('build/global/js/functions.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
 </html>

@@ -1,24 +1,70 @@
 var Encore = require('@symfony/webpack-encore');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 Encore
-    // the project directory where compiled assets will be stored
-    .setOutputPath('public/build/')
-    // the public path used by the web server to access the previous directory
-    .setPublicPath('/build')
+    .setOutputPath('public/build/front')
+    .setPublicPath('/build/front')
     .cleanupOutputBeforeBuild()
-    .enableSourceMaps(!Encore.isProduction())
-    // uncomment to create hashed filenames (e.g. app.abc123.css)
-    // .enableVersioning(Encore.isProduction())
-
-    // uncomment to define the assets of the project
-    // .addEntry('js/app', './assets/js/app.js')
-    // .addStyleEntry('css/app', './assets/css/app.scss')
-
-    // uncomment if you use Sass/SCSS files
-    // .enableSassLoader()
-
-    // uncomment for legacy applications that require $/jQuery as a global variable
+    .enableBuildNotifications()
+    .addEntry('js/main', './assets/front/js/theme/custom.js')
+    // css entry
+    .addStyleEntry('css/impact', [
+        './assets/front/css/theme/business.css',
+        './assets/front/css/theme/css/fonts.css',
+        './assets/front/css/theme/css/colors.css',
+        './assets/front/css/theme/onepage/css/et-line.css'
+    ])
+    .addStyleEntry('css/app', [
+        './assets/front/style.less',
+        './assets/front/less/dark.less',
+        './assets/front/less/responsive.less',
+        './assets/front/css/swiper.css',
+        './assets/front/css/animate.css',
+        './assets/front/css/magnific-popup.css',
+        './assets/front/css/font-icons.css'
+    ])
+    //.enableSassLoader()
+    .enableLessLoader()
+    // allows legacy applications to use $/jQuery as a global variable
     // .autoProvidejQuery()
+    .enableSourceMaps(!Encore.isProduction())
+    .enableSourceMaps(true)
+    .enableVersioning(Encore.isProduction())
+    .addPlugin(new CopyWebpackPlugin([
+        { from: './assets/front/static', to: 'static' }
+    ]))
 ;
 
-module.exports = Encore.getWebpackConfig();
+const firstConfig = Encore.getWebpackConfig();
+firstConfig.name = 'firstConfig';
+
+Encore.reset();
+
+Encore
+    .setOutputPath('public/build/back')
+    .setPublicPath('/build/back')
+    .cleanupOutputBeforeBuild()
+    .enableBuildNotifications()
+    .addStyleEntry('css/core', [
+        './assets/back/vendor/bootstrap/css/bootstrap.min.css',
+        './assets/back/vendor/font-awesome/css/font-awesome.min.css',
+        './assets/back/vendor/themify-icons/css/themify-icons.css',
+        './assets/back/vendor/animsition/css/animsition.min.css',
+        './assets/back/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css'
+    ])
+    .addStyleEntry('css/app', [
+        './assets/back/css/scss/app.scss',
+        './assets/back/css/style.scss'
+    ])
+    .enableSassLoader()
+    .enableSourceMaps(!Encore.isProduction())
+    .enableSourceMaps(true)
+    .enableVersioning(Encore.isProduction())
+    .addPlugin(new CopyWebpackPlugin([
+        { from: './assets/back/static', to: 'static' }
+    ]))
+;
+const secondConfig = Encore.getWebpackConfig();
+secondConfig.name = 'secondConfig';
+
+module.exports = [firstConfig, secondConfig];
