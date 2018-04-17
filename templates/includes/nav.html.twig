@@ -1,25 +1,40 @@
-<header id="header" class="transparent-header dark full-header" data-sticky-class="not-dark" data-responsive-class="not-dark" data-sticky-offset="full">
-    <div id="header-wrap">
-        <div class="container clearfix">
-            <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-            <!-- Logo
-            ============================================= -->
-            <div id="logo">
-                <a href="" class="standard-logo" data-dark-logo="demos/business/images/logo-dark.png"><img src="demos/business/images/logo.png" alt="Canvas Logo"></a>
-                <a href="" class="retina-logo" data-dark-logo="demos/business/images/logo-dark@2x.png"><img src="demos/business/images/logo@2x.png" alt="Canvas Logo"></a>
-            </div><!-- #logo end -->
-            <!-- Primary Navigation
-            ============================================= -->
-            <nav id="primary-menu" class="not-dark">
-                <ul>
-                    <li class="active"><a href="#"><div>{{ 'Menu 1' }}</div></a></li>
-                    <li class="active"><a href="#"><div>{{ 'Menu 2' }}</div></a></li>
-                    <li class="active"><a href="#"><div>{{ 'Menu 3' }}</div></a></li>
-                    <li class="active"><a href="#"><div>{{ 'Menu 4' }}</div></a></li>
-                    <li class="active"><a href="#"><div>{{ 'Menu 5' }}</div></a></li>
+<header id="tg-header" class="tg-header tg-fixedheader tg-headervone">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="tg-headercontent tg-headercontentdark">
+                <strong class="tg-logo">
+                    <a href="">
+                        <img class="tg-logoblack" src="{{ asset('build/global/images/logos/logo-black.png') }}" alt="company logo here">
+                        <img class="tg-logowhite" src="{{ asset('build/global/images/logos/logo-white.png') }}" alt="company logo here">
+                        <img src="{{ asset('build/global/images/logos/logo.png') }}" alt="company logo here">
+                    </a>
+                </strong>
+                <ul class="tg-socialicons">
+                    <li><a href="javascript:void(0);(0);"><i class="icon-facebook-1"></i></a></li>
+                    <li><a href="javascript:void(0);(0);"><i class="icon-twitter-1"></i></a></li>
+                    <li><a href="javascript:void(0);(0);"><i class="icon-google4"></i></a></li>
                 </ul>
-            </nav><!-- #primary-menu end -->
+                <nav id="tg-nav" class="tg-nav">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+                        <ul>
+                            <li><a href="">{{ 'menu 1' }}</a></li>
+                            <li><a href="">{{ 'menu 2' }}</a></li>
+                            <li><a href="">{{ 'menu 3' }}</a></li>
+                            <li><a href="">{{ 'menu 4' }}</a></li>
+                            <li><a href="">{{ 'menu 5' }}</a></li>
+                            <li><a href="">{{ 'menu 6' }}</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
-
-</header><!-- #header end -->
+</header>
