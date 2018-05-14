@@ -1,0 +1,41 @@
+<header class="topbar">
+    <div class="topbar-left">
+        <span class="topbar-btn sidebar-toggler"><i>&#9776;</i></span>
+
+        <a class="topbar-btn d-none d-md-block" href="#" data-provide="fullscreen tooltip" title="Plein écran">
+            <i class="material-icons fullscreen-default">{{ 'Plein ecran' }}</i>
+            <i class="material-icons fullscreen-active">{{ 'Sortir du plein ecran' }}</i>
+            <i class="material-icons devices">{{ 'Retournez sur le site' }}</i>
+        </a>
+
+        <div class="dropdown d-none d-md-block">
+            <span class="topbar-btn" data-toggle="dropdown"><i class="ti-layout-grid3-alt"></i></span>
+            <div class="dropdown-menu dropdown-grid">
+                <a class="dropdown-item" href="{{ path('admin') }}">
+                    <span class="icon fa fa-home"></span>
+                    <span class="title">Dashboard</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <span class="icon fa fa-briefcase"></span>
+                    <span class="title">{{ 'Services' }}</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="topbar-divider d-none d-md-block"></div>
+    </div>
+    <div class="topbar-right">
+        <ul class="topbar-btns">
+            <li class="dropdown">
+                <span class="topbar-btn" data-toggle="dropdown"><img class="avatar avatar-sm" src="{{ asset('build/back/static/avatar/1.jpg', 'back') }}" alt="{{ app.user ? app.user.username: '' }}"></span>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#"><i class="ti-user"></i> Profile</a>
+                    <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
+                    <a class="dropdown-item" href="#"><i class="ti-help"></i> Help</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ path('security_logout') }}"><i class="ti-power-off"></i> {{ 'Se deconnecter' }}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>

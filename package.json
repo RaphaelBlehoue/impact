@@ -1,5 +1,6 @@
 {
     "devDependencies": {
+        "@ckeditor/ckeditor5-editor-classic": "^10.0.0",
         "@symfony/webpack-encore": "^0.17.0",
         "copy-webpack-plugin": "^4.5.1",
         "extract-text-webpack-plugin": "^3.0.2",
@@ -15,9 +16,10 @@
     "private": true,
     "scripts": {
         "dev-server": "encore dev-server",
-        "dev:first": "encore dev --config-name firstConfig",
-        "dev:second": "encore dev --config-name secondConfig",
-        "watch": "encore dev --watch",
+        "first": "encore dev --config-name firstConfig",
+        "second": "encore dev --config-name secondConfig",
+        "first:watch": "encore dev --config-name firstConfig --watch",
+        "second:watch": "encore dev --config-name secondConfig --watch",
         "build": "encore production"
     },
     "dependencies": {

@@ -1,0 +1,47 @@
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+    # define your filter sets under this option
+    filter_sets:
+        # an example thumbnail transformation definition
+        # https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html#create-thumbnails
+        thumb_medium:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [369, 220]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_partner:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [120, 120]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_service:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [570, 388]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_blog:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [870, 521]
+                    mode:          outbound
+                    allow_upscale: true
