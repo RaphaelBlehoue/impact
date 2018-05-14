@@ -1,7 +1,8 @@
-
+*.iml
 ###> symfony/framework-bundle ###
 /.env
 /public/bundles/
+/public/media/
 /assets/
 /var/
 /vendor/
