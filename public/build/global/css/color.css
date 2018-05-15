@@ -157,12 +157,12 @@ input:focus,
 .tg-headervnine .navbar-toggle{ background: #565454; }
 .tg-parallaxtestimonials{ background: rgba(244,192,48, 0.80); }
 .tg-footervthree .tg-footernav ul li a:before{ background: #00aced; }
-.tg-headervten .navbar-toggle .icon-bar{ background: #82b440; }
+.tg-headervten .navbar-toggle .icon-bar{ background: #e40e17; }
 .tg-servicesvnine .tg-service:hover .tg-serviceicon,
 .tg-clientfeedbackslidervfour .tg-clientfeedback > h3,
 .tg-greencolor .tg-service .tg-back,
 .tg-statisticsvfour,
-.tg-servicesvten .tg-serviceicon{ background: #82b440; }
+.tg-servicesvten .tg-serviceicon{ background: #e40e17; }
 /*=============================================
 			Theme Border Color
 =============================================*/
@@ -170,5 +170,5 @@ input:focus,
 .tg-headervnine .navbar-toggle,
 .tg-headervfive .navbar-toggle{ border-color: #f3c130; }
 .tg-servicesvnine .tg-serviceicon,
-.tg-headervten .navbar-toggle{ border-color: #82b440; }
+.tg-headervten .navbar-toggle{ border-color: #e40e17; }
 { border-color: #565454; }

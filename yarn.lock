@@ -25,11 +25,27 @@
   dependencies:
     "@ckeditor/ckeditor5-utils" "^10.0.0"
 
+"@ckeditor/ckeditor5-enter@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-enter/-/ckeditor5-enter-10.0.0.tgz#5806e21ff09012a22b8b02a4b091354e4418c1e1"
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^10.0.0"
+    "@ckeditor/ckeditor5-engine" "^10.0.0"
+    "@ckeditor/ckeditor5-utils" "^10.0.0"
+
 "@ckeditor/ckeditor5-theme-lark@^10.0.0":
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-theme-lark/-/ckeditor5-theme-lark-10.0.0.tgz#3bcbd1dbd6124750ee921738285f19b9af0b4787"
   dependencies:
     "@ckeditor/ckeditor5-ui" "^10.0.0"
+
+"@ckeditor/ckeditor5-typing@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-typing/-/ckeditor5-typing-10.0.0.tgz#062be02a9a6a2c5c660b11c71b6e5683561da422"
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^10.0.0"
+    "@ckeditor/ckeditor5-engine" "^10.0.0"
+    "@ckeditor/ckeditor5-utils" "^10.0.0"
 
 "@ckeditor/ckeditor5-ui@^10.0.0":
   version "10.0.0"

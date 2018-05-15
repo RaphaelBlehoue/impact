@@ -1,6 +1,8 @@
 {
     "devDependencies": {
         "@ckeditor/ckeditor5-editor-classic": "^10.0.0",
+        "@ckeditor/ckeditor5-enter": "^10.0.0",
+        "@ckeditor/ckeditor5-typing": "^10.0.0",
         "@symfony/webpack-encore": "^0.17.0",
         "copy-webpack-plugin": "^4.5.1",
         "extract-text-webpack-plugin": "^3.0.2",

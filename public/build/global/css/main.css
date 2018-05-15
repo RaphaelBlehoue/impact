@@ -1,6 +1,6 @@
 /*
- @Author: Company Name
- @URL: http://companyname.com
+ @Author: Impact performances
+ @URL: https://impact-performances.com
  This file contains the styling for the actual theme, this
  is the file you need to edit to change the look of the
  theme.
@@ -240,6 +240,45 @@ table > tbody + tbody { border-top: 2px solid #dbdbdb; }
 p ins { color: #777; }
 dl dd { margin-left: 20px; }
 address { font-style: italic; }
+
+.tg-pt5 {padding-top: 5px;}
+.tg-pt10 {padding-top: 10px;}
+.tg-pt15 {padding-top: 15px;}
+.tg-pt20 {padding-top: 20px;}
+.tg-pt30 {padding-top: 30px;}
+.tg-pt40 {padding-top: 40px;}
+.tg-pt50 {padding-top: 50px;}
+.tg-pt100 {padding-top: 100px;}
+
+
+.tg-pb5 {padding-bottom: 5px;}
+.tg-pb10 {padding-bottom: 10px;}
+.tg-pb15 {padding-bottom: 15px;}
+.tg-pb20 {padding-bottom: 20px;}
+.tg-pb30 {padding-bottom: 30px;}
+.tg-pb40 {padding-bottom: 40px;}
+.tg-pb50 {padding-bottom: 50px;}
+.tg-pb100 {padding-bottom: 100px;}
+
+.tg-mb5 {margin-bottom: 5px;}
+.tg-mb10 {margin-bottom: 10px;}
+.tg-mb15 {margin-bottom: 15px;}
+.tg-mb20 {margin-bottom: 20px;}
+.tg-mb30 {margin-bottom: 30px;}
+.tg-mb40 {margin-bottom: 40px;}
+.tg-mb50 {margin-bottom: 50px;}
+.tg-mb100 {margin-bottom: 100px;}
+
+
+.tg-mt5 {margin-top: 5px;}
+.tg-mt10 {margin-top: 10px;}
+.tg-mt15 {margin-top: 15px;}
+.tg-mt20 {margin-top: 20px;}
+.tg-mt30 {margin-top: 30px;}
+.tg-mt40 {margin-top: 40px;}
+.tg-mt50 {margin-top: 50px;}
+.tg-mt100 {margin-top: 100px;}
+
 /* =============================================
 			Theme Custom Select					
 ============================================= */

@@ -8,7 +8,7 @@ Encore
     .enableBuildNotifications()
     .addEntry('js/app', './assets/front/javascript/main.js')
     // css entry
-    .addStyleEntry('css/main','./assets/front/css/main.css')
+    //.addStyleEntry('css/main','./assets/front/css/main.css')
     //.enableSassLoader()
     //.enableLessLoader()
     // allows legacy applications to use $/jQuery as a global variable
