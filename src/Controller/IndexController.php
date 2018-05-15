@@ -17,10 +17,19 @@ class IndexController extends Controller
 
 
     /**
-     * @Route("/notre-adn", name="page_adn" , methods={"GET"}, schemes={"%secure_channel%"})
+     * @Route("/notre_adn", name="page_adn" , methods={"GET"}, schemes={"%secure_channel%"})
      */
     public function AdnPage()
     {
         return $this->render('pages/adn.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/notre_agence", name="page_agence", methods={"GET"}, schemes={"%secure_channel%"})
+     */
+    public function CabinetPage()
+    {
+        return $this->render('pages/cabinet.html.twig');
     }
 }
