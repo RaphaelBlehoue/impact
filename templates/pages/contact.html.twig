@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'Le Cabinet | Impact-performances' }}{% endblock %}
+{% block slide %}
+    <!--************************************
+            Home Slider Start
+    *************************************-->
+    <div id="tg-innerbanner" class="tg-innerbanner">
+        <figure data-vide-bg="poster: {{ asset('build/global/images/innerpagebanner/img-05.jpg') }}" data-vide-options="position: 0% 50%">
+            <figcaption>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h1>{{ 'Faisons bouger les choses' }}</h1>
+                            <h2>Une nouvelle façons <span> de dévélopper votre entreprise </span></h2>
+                        </div>
+                    </div>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <!--************************************
+            Home Slider End
+    *************************************-->
+{% endblock %}
+{% block body %}
+    <!--************************************
+            Contact Us Start
+    *************************************-->
+    <section class="tg-haslayout">
+        <div class="tg-contactus tg-contactusvtwo">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="tg-address">
+                            <li>
+                                <figure>
+                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
+                                        <img src="{{ asset('build/global/images/img-02.jpg') }}" alt="image description">
+                                    </a>
+                                    <div class="tg-addresscontent">
+                                        <h2><span>{{ 'Localisation France' }}</span>{{ 'Paris' }}</h2>
+                                        <em>Phone:  (+33) 0000 0000</em>
+                                        <em>Email: <a href="mailto:info@impact-performances.com?bcc=henoh@impact-performances.com">info@impact-performances.com</a></em>
+                                        <address>Adresse: Rue x 00000 ..., Paris Côte d'ivoire</address>
+                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
+                                        <img src="{{ asset('build/global/images/img-03.jpg') }}" alt="image description">
+                                    </a>
+                                    <div class="tg-addresscontent">
+                                        <h2><span>{{ 'Localisation Côte d\'ivoire' }}</span>{{ 'Abidjan' }}</h2>
+                                        <em>Phone:  (+225) 0000 0000</em>
+                                        <em>Email: <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">info-ci@impact-performances.com</a></em>
+                                        <address>Adresse: Cocody Vallon ..., Abidjan Côte d'ivoire</address>
+                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tg-mapprojectarea tg-bglight">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-md-push-2 col-lg-8 col-lg-push-2">
+                            <div class="tg-startyourwork">
+                                <div class="tg-title tg-titlevone">
+                                    <h3><span>{{ 'Travaillez avec nous' }}</span>{{ 'débutez votre projet'|capitalize }}</h3>
+                                </div>
+                                {{ include('includes/_form.html.twig') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--************************************
+            Contact Us End
+    *************************************-->
+{% endblock %}
+

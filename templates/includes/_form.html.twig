@@ -1,0 +1,55 @@
+{{ form_start(form, {'attr': {'class': 'tg-formtheme tg-formstartproject', novalidate: 'novalidate'} } ) }}
+    <fieldset>
+        <div class="form-group">
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.lastname) }}
+            {{ form_widget(form.lastname) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.phone) }}
+            {{ form_widget(form.phone) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.compagny) }}
+            {{ form_widget(form.compagny) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.office) }}
+            {{ form_widget(form.office) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.address) }}
+            {{ form_widget(form.address) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.town) }}
+            {{ form_widget(form.town) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.website) }}
+            {{ form_widget(form.website) }}
+        </div>
+        <div class="form-group">
+            {{ form_errors(form.subject) }}
+            {{ form_widget(form.subject) }}
+        </div>
+    </fieldset>
+    <div class="col-md-12 tg-mb10 tg-mt10">
+        <div class="form-group">
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content) }}
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            {{ form_widget(form.save) }}
+        </div>
+    </div>
+{{ form_end(form) }}
