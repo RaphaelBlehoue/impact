@@ -1,0 +1,17 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'PAGE ADN' }} {% endblock %}
+{% block body %}
+    <div class="col-12">
+        <div class="card">
+            <header class="card-header">
+                <h4 class="card-title">{{ 'ADN'|upper }}</h4>
+                <a class="btn btn-square btn-outline-danger" href="{{ path('ipadn_index') }}">
+                    <label><i class="ti-na"></i></label>
+                </a>
+            </header>
+            <div class="card-body center-vh">
+                {{ include('ipadn/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

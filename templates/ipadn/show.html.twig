@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'ADN PAGE' }} {% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <div class="col-6 col-lg-offset-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title">{{ 'ADN PAGE'|upper }}</h4>
+                        {{ include('ipadn/_delete_form.html.twig') }}
+                    </header>
+                    <img class="card-img-top" src="{{  asset(ipadn.assertPath) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>{{ 'Titre' }}</th>
+                                <td>{{ ipadn.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Contenu' }}</th>
+                                <td>{{ ipadn.smallContent }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Date de creation' }}</th>
+                                <td>{{ ipadn.created ? ipadn.created|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-label btn-dark" href="{{ path('ipadn_index') }}">
+                            <label><i class="ti-arrow-left"></i></label>
+                            {{ 'Retour à la liste'}}
+                        </a>
+                        <a class="btn btn-label btn-danger" href="{{ path('ipadn_edit', {'id': ipadn.id}) }}">
+                            <label><i class="ti-pencil-alt"></i></label>
+                            {{ 'Modifier' }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
