@@ -36,6 +36,22 @@ class IndexController extends Controller
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/blog", name="page_blog", methods={"GET"}, schemes={"%secure_channel%"})
+     */
+    public function blogPage(){
+        return $this->render('pages/blog.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/blog/detail", name="page_blog_detail", methods={"GET"}, schemes={"%secure_channel%"})
+     */
+    public function blogDetailPage(){
+        return $this->render('pages/blog_detail.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/nous_contactez", name="page_contact", methods={"GET"}, schemes={"%secure_channel%"})
      */
     public function ContactPage()

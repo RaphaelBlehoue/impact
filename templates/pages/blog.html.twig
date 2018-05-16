@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'Actualités & Astuces | Impact-performances' }}{% endblock %}
+{% block slide %}
+    <!--************************************
+            Home Banner Start
+    *************************************-->
+    <div id="tg-innerbanner" class="tg-innerbanner">
+        <figure data-vide-bg="poster: {{ asset('build/global/static/images/innerpagebanner/img-07.jpg') }}" data-vide-options="position: 0% 50%">
+            <figcaption>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h1>{{ 'Actualités & Astuces' }}</h1>
+                            <h2>{{ 'Toute l\'actualité sur la communication & le dévéloppement de votre entreprise' }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <!--************************************
+            Home Banner End
+    *************************************-->
+{% endblock %}
+{% block body %}
+    <div class="tg-haslayout tg-sectionspace">
+        <div class="container">
+            <div class="row">
+                <div class="tg-blogpost tg-blogpostvtwo tg-blogpostvseven">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        {% for i in 1..30 %}
+                            <article class="tg-post">
+                                <figure>
+                                    <a href="{{ path('page_blog_detail') }}"><img src="{{ asset('build/global/static/images/blog/img-47.jpg') }}" alt="image description"></a>
+                                    <span class="tg-postcategory">work</span>
+                                </figure>
+                                <div class="tg-postcontent">
+                                    <div class="tg-posttitle">
+                                        <h3><a href="{{ path('page_blog_detail') }}">Inspired by Italian Style</a></h3>
+                                    </div>
+                                    <div class="tg-description">
+                                        <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, We travel Roswell sententiae.</p>
+                                    </div>
+                                    <ul class="tg-postmetadata">
+                                        <li>
+                                            <figure><a href="{{ path('page_blog_detail') }}"><img src="{{ asset('build/global/static/images/allhome/1/img-09.jpg') }}" alt="image description"></a></figure>
+                                            <span>Par <a href="{{ path('page_blog_detail') }}">Admin</a></span>
+                                        </li>
+                                        <li><time datetime="2017-07-07">25 Sep {{ 'now'|date('Y') }}</time></li>
+                                    </ul>
+                                </div>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
