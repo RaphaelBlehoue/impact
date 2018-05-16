@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'Nos Services | Impact-performances' }}{% endblock %}
+{% block slide %}
+    <!--************************************
+            Home Banner Start
+    *************************************-->
+    <div id="tg-innerbanner" class="tg-innerbanner">
+        <figure data-vide-bg="poster: {{ asset('build/global/static/images/innerpagebanner/img-07.jpg') }}" data-vide-options="position: 0% 50%">
+            <figcaption>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h1>{{ 'Nos services' }}</h1>
+                            <h2>{{ 'Faire de  la communication un levier de développement et de croissance' }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <!--************************************
+            Home Banner End
+    *************************************-->
+{% endblock %}
+{% block body %}
+
+    <!--************************************
+    Services V Five Start
+    *************************************-->
+    <section class="tg-sectionspace tg-haslayout tg-paddingbottomzero tg-mb50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="tg-sectionhead tg-sectionheadvtwo">
+                        <div class="tg-sectiontitle">
+                            <h2>{{ 'Ce que nous vous offrons'|upper }}</h2>
+                        </div>
+                        <div class="tg-description">
+                            <p>Mauris in rutrum nunc. Aenean in lectus id mi sollicitudin placerat.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tg-services tg-servicesvfive">
+                    {% for i in 1..6 %}
+                        <div class="col-lg-12 col-sm-4 col-md-4 col-lg-4 tg-mb15">
+                            <a href="{{ path('page_service_detail') }}">
+                                <div class="tg-service tg-flipbox">
+                                    <div class="tg-flipper">
+                                        <figure class="tg-front">
+                                            <img src="{{ asset('build/front/static/images/services/img-04.jpg') }}" height="341" width="406" alt="image description">
+                                            <figcaption>
+                                                <span class="tg-serviceicon"><i class="icon-lightbulb"></i></span>
+                                                <div class="tg-servicetitle">
+                                                    <h3><span>Project Creation</span>Planning &amp; Strategy</h3>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="tg-back">
+                                            <div class="tg-description">
+                                                <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae salutatus consequat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--************************************
+            Services V Five End
+    *************************************-->
+
+    <!--************************************
+            Contact Us Start
+    *************************************-->
+    <section class="tg-haslayout tg-sectionspace">
+        <div class="tg-contactus tg-contactusvtwo">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-push-2 col-lg-8">
+                        <div class="tg-sectionhead tg-sectionheadvtwo">
+                            <div class="tg-sectiontitle">
+                                <h2>{{'Travaillez avec nous'|upper }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="tg-address">
+                            <li>
+                                <figure>
+                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
+                                        <img src="{{ asset('build/global/images/img-02.jpg') }}" alt="image description">
+                                    </a>
+                                    <div class="tg-addresscontent">
+                                        <h2><span>{{ 'Localisation France' }}</span>{{ 'Paris' }}</h2>
+                                        <em>Phone:  (+33) 0000 0000</em>
+                                        <em>Email: <a href="mailto:info@impact-performances.com?bcc=henoh@impact-performances.com">info@impact-performances.com</a></em>
+                                        <address>Adresse: Rue x 00000 ..., Paris Côte d'ivoire</address>
+                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
+                                        <img src="{{ asset('build/global/images/img-03.jpg') }}" alt="image description">
+                                    </a>
+                                    <div class="tg-addresscontent">
+                                        <h2><span>{{ 'Localisation Côte d\'ivoire' }}</span>{{ 'Abidjan' }}</h2>
+                                        <em>Phone:  (+225) 0000 0000</em>
+                                        <em>Email: <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">info-ci@impact-performances.com</a></em>
+                                        <address>Adresse: Cocody Vallon ..., Abidjan Côte d'ivoire</address>
+                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--************************************
+            Contact Us End
+    *************************************-->
+    <!--************************************
+    Brands Start
+    *************************************-->
+    <div class="tg-haslayout tg-paddingbottomzero">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-push-2 col-lg-8">
+                    <div class="tg-sectionhead tg-sectionheadvtwo">
+                        <div class="tg-sectiontitle">
+                            <h2>{{'ils nous ont fait confiance'|upper }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="tg-barandsslider" class="tg-barandsslider owl-carousel tg-barands">
+                        {% for i in 1..6 %}
+                            <div class="item"><figure><a href="javascript:void(0);(0);"><img src="{{ asset('build/global/static/images/allhome/2/img-10.jpg') }}" alt="image description"></a></figure></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--************************************
+            Brands End
+    *************************************-->
+{% endblock %}

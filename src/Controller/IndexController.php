@@ -36,9 +36,36 @@ class IndexController extends Controller
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/our_metiers", name="page_metier", methods={"GET"}, schemes={"%secure_channel%"})
+     */
+    public function MetierPage()
+    {
+        return $this->render('pages/metier.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/our_services", name="page_service", methods={"GET"}, schemes={"%secure_channel%"})
+     */
+    public function ServicePage()
+    {
+        return $this->render('pages/service.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/service/detail", name="page_service_detail", methods={"GET"}, schemes={"%secure_channel%"})
+     */
+    public function ServieDetailPage()
+    {
+        return $this->render('pages/service_detail.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/blog", name="page_blog", methods={"GET"}, schemes={"%secure_channel%"})
      */
-    public function blogPage(){
+    public function BlogPage(){
         return $this->render('pages/blog.html.twig');
     }
 
@@ -46,7 +73,7 @@ class IndexController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/blog/detail", name="page_blog_detail", methods={"GET"}, schemes={"%secure_channel%"})
      */
-    public function blogDetailPage(){
+    public function BlogDetailPage(){
         return $this->render('pages/blog_detail.html.twig');
     }
 

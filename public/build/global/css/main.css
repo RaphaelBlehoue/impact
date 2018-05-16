@@ -1,11 +1,6 @@
 /*
  @Author: Impact performances
- @URL: https://impact-performances.com
- This file contains the styling for the actual theme, this
- is the file you need to edit to change the look of the
- theme.
- However we used Less script to make things easy to maintain, this is the compressed ourput, we recommend to edit the less files and then recombile the files and add the result here, if you don't like to use less you can edit this file here.
- 
+ @URL: https://www.impact-performances.com
  This files contents are outlined below.
  01.	Theme Reset Style
  02.	Global Elements
@@ -278,6 +273,7 @@ address { font-style: italic; }
 .tg-mt40 {margin-top: 40px;}
 .tg-mt50 {margin-top: 50px;}
 .tg-mt100 {margin-top: 100px;}
+.tg-text-justify {text-align: justify-all;}
 
 /* =============================================
 			Theme Custom Select					
@@ -506,6 +502,7 @@ li.tg-rss a { background:#ff6600; }
 	width: 100%;
 	float: left;
 }
+
 .tg-bglight { background:#f7f7f7; }
 .tg-bgdark {
 	color: #fff;
