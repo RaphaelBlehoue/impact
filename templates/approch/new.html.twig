@@ -1,16 +1,16 @@
 {% extends 'admin.html.twig' %}
-{% block title %} {{ 'section cabinet' }} {% endblock %}
+{% block title %} {{ 'section approche' }} {% endblock %}
 {% block body %}
     <div class="col-12">
         <div class="card">
             <header class="card-header">
-                <h4 class="card-title">{{ 'Section cabinet | ajout'|upper }}</h4>
-                <a class="btn btn-square btn-outline-danger" href="{{ path('cabinet_index') }}">
+                <h4 class="card-title">{{ 'Section approche | ajout'|upper }}</h4>
+                <a class="btn btn-square btn-outline-danger" href="{{ path('approch_index') }}">
                     <label><i class="ti-na"></i></label>
                 </a>
             </header>
             <div class="card-body center-vh">
-                {{ include('cabinet/_form.html.twig') }}
+                {{ include('approch/_form.html.twig') }}
             </div>
         </div>
     </div>

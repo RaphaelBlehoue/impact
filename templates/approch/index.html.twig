@@ -1,13 +1,13 @@
 {% extends 'admin.html.twig' %}
-{% block title %} {{ 'section cabinet' }} {% endblock %}
+{% block title %}{{ 'Section approche' }}{% endblock %}
 {% block body %}
     <div class="col-12">
         <div class="card">
             <header class="card-header">
-                <h4 class="card-title">{{ 'section cabinet'|upper }}</h4>
-                <a class="btn btn-label btn-info" href="{{ path('cabinet_new') }}">
+                <h4 class="card-title">{{ 'Section approche'|upper }}</h4>
+                <a class="btn btn-label btn-info" href="{{ path('approch_new') }}">
                     <label><i class="ti-plus"></i></label>
-                    {{ 'Ajouter un nouveau'}}
+                    {{ 'Ajouter le contenu'}}
                 </a>
             </header>
             <div class="card-body">
@@ -25,22 +25,21 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    {% for cabinet in cabinets %}
+                    {% for approch in approches %}
                         <tr>
-                            <td>{{ cabinet.name }}</td>
+                            <td>{{ approch.title }}</td>
                             <td>
-                                <a href="{{ path('cabinet_show', {'id': cabinet.id}) }}" class="btn btn-primary">{{ 'Afficher' }}</a>
-                                <a href="{{ path('cabinet_edit', {'id': cabinet.id}) }}" class="btn btn-danger">{{ 'Modifier' }}</a>
+                                <a href="{{ path('approch_show', {'id': approch.id}) }}" class="btn btn-primary">{{ 'Afficher' }}</a>
+                                <a href="{{ path('approch_edit', {'id': approch.id}) }}" class="btn btn-danger">{{ 'Modifier' }}</a>
                             </td>
                         </tr>
                     {% else %}
                         <tr>
-                            <td colspan="4">no records found</td>
+                            <td colspan="7">no records found</td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>

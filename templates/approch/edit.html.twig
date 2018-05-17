@@ -1,14 +1,14 @@
 {% extends 'admin.html.twig' %}
-{% block title %} {{ 'section cabinet' }} {% endblock %}
+{% block title %} {{ 'section approche'|upper }} {% endblock %}
 {% block body %}
     <div class="col-12">
         <div class="card">
             <header class="card-header">
-                <h4 class="card-title">{{ 'Modifier section cabinet'|upper }}</h4>
-                {{ include('cabinet/_delete_form.html.twig') }}
+                <h4 class="card-title">{{ 'Modifier section approche'|upper }}</h4>
+                {{ include('approch/_delete_form.html.twig') }}
             </header>
             <div class="card-body center-vh">
-                {{ include('cabinet/_form.html.twig', {
+                {{ include('approch/_form.html.twig', {
                     'button_label': 'Mise à jour', 'button_class': 'btn-danger'
                 })
                 }}

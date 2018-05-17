@@ -43,3 +43,10 @@ vich_uploader:
             delete_on_update: true
             delete_on_remove: true
             namer: vich_uploader.namer_uniqid
+        approch_image:
+            uri_prefix: /images/approch
+            upload_destination: '%kernel.project_dir%/public/images/approch'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+            namer: vich_uploader.namer_uniqid
