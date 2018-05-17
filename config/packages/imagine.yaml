@@ -22,7 +22,7 @@ liip_imagine:
                 auto_rotate: ~
                 strip: ~
                 thumbnail:
-                    size:          [120, 120]
+                    size:          [235, 108]
                     mode:          outbound
                     allow_upscale: true
         thumb_service:
@@ -83,5 +83,15 @@ liip_imagine:
                 strip:
                 thumbnail:
                     size:          [478, 478]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_metier:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip:
+                thumbnail:
+                    size:          [378, 283]
                     mode:          outbound
                     allow_upscale: true

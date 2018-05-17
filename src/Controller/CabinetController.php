@@ -11,12 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/cabinet")
+ * @Route("/admin/cabinet")
  */
 class CabinetController extends Controller
 {
     /**
      * @Route("/", name="cabinet_index", methods="GET")
+     * @param CabinetRepository $cabinetRepository
+     * @return Response
      */
     public function index(CabinetRepository $cabinetRepository): Response
     {
@@ -25,6 +27,8 @@ class CabinetController extends Controller
 
     /**
      * @Route("/new", name="cabinet_new", methods="GET|POST")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -48,6 +52,8 @@ class CabinetController extends Controller
 
     /**
      * @Route("/{id}", name="cabinet_show", methods="GET")
+     * @param Cabinet $cabinet
+     * @return Response
      */
     public function show(Cabinet $cabinet): Response
     {
@@ -56,6 +62,9 @@ class CabinetController extends Controller
 
     /**
      * @Route("/{id}/edit", name="cabinet_edit", methods="GET|POST")
+     * @param Request $request
+     * @param Cabinet $cabinet
+     * @return Response
      */
     public function edit(Request $request, Cabinet $cabinet): Response
     {
@@ -65,7 +74,7 @@ class CabinetController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cabinet_edit', ['id' => $cabinet->getId()]);
+            return $this->redirectToRoute('cabinet_index');
         }
 
         return $this->render('cabinet/edit.html.twig', [
@@ -76,6 +85,9 @@ class CabinetController extends Controller
 
     /**
      * @Route("/{id}", name="cabinet_delete", methods="DELETE")
+     * @param Request $request
+     * @param Cabinet $cabinet
+     * @return Response
      */
     public function delete(Request $request, Cabinet $cabinet): Response
     {

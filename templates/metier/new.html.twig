@@ -1,0 +1,17 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'section metier'|upper }} {% endblock %}
+{% block body %}
+    <div class="col-12">
+        <div class="card">
+            <header class="card-header">
+                <h4 class="card-title">{{ 'section metier'|upper }}</h4>
+                <a class="btn btn-square btn-outline-danger" href="{{ path('metier_index') }}">
+                    <label><i class="ti-na"></i></label>
+                </a>
+            </header>
+            <div class="card-body center-vh">
+                {{ include('metier/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

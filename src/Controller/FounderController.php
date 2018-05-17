@@ -11,12 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/founder")
+ * @Route("/admin/founder")
  */
 class FounderController extends Controller
 {
     /**
      * @Route("/", name="founder_index", methods="GET")
+     * @param FounderRepository $founderRepository
+     * @return Response
      */
     public function index(FounderRepository $founderRepository): Response
     {
@@ -25,6 +27,8 @@ class FounderController extends Controller
 
     /**
      * @Route("/new", name="founder_new", methods="GET|POST")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -48,6 +52,8 @@ class FounderController extends Controller
 
     /**
      * @Route("/{id}", name="founder_show", methods="GET")
+     * @param Founder $founder
+     * @return Response
      */
     public function show(Founder $founder): Response
     {
@@ -56,6 +62,9 @@ class FounderController extends Controller
 
     /**
      * @Route("/{id}/edit", name="founder_edit", methods="GET|POST")
+     * @param Request $request
+     * @param Founder $founder
+     * @return Response
      */
     public function edit(Request $request, Founder $founder): Response
     {
@@ -65,7 +74,7 @@ class FounderController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('founder_edit', ['id' => $founder->getId()]);
+            return $this->redirectToRoute('founder_index');
         }
 
         return $this->render('founder/edit.html.twig', [
@@ -76,6 +85,9 @@ class FounderController extends Controller
 
     /**
      * @Route("/{id}", name="founder_delete", methods="DELETE")
+     * @param Request $request
+     * @param Founder $founder
+     * @return Response
      */
     public function delete(Request $request, Founder $founder): Response
     {

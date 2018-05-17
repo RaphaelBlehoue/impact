@@ -11,12 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/approch")
+ * @Route("/admin/approch")
  */
 class ApprochController extends Controller
 {
     /**
      * @Route("/", name="approch_index", methods="GET")
+     * @param ApprochRepository $approchRepository
+     * @return Response
      */
     public function index(ApprochRepository $approchRepository): Response
     {
@@ -25,6 +27,8 @@ class ApprochController extends Controller
 
     /**
      * @Route("/new", name="approch_new", methods="GET|POST")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -48,6 +52,8 @@ class ApprochController extends Controller
 
     /**
      * @Route("/{id}", name="approch_show", methods="GET")
+     * @param Approch $approch
+     * @return Response
      */
     public function show(Approch $approch): Response
     {
@@ -56,6 +62,9 @@ class ApprochController extends Controller
 
     /**
      * @Route("/{id}/edit", name="approch_edit", methods="GET|POST")
+     * @param Request $request
+     * @param Approch $approch
+     * @return Response
      */
     public function edit(Request $request, Approch $approch): Response
     {
@@ -65,7 +74,7 @@ class ApprochController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('approch_edit', ['id' => $approch->getId()]);
+            return $this->redirectToRoute('approch_index');
         }
 
         return $this->render('approch/edit.html.twig', [
@@ -76,6 +85,9 @@ class ApprochController extends Controller
 
     /**
      * @Route("/{id}", name="approch_delete", methods="DELETE")
+     * @param Request $request
+     * @param Approch $approch
+     * @return Response
      */
     public function delete(Request $request, Approch $approch): Response
     {

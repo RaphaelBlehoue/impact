@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/ip/item/adn")
+ * @Route("/admin/ip/item/adn")
  */
 class IpItemAdnController extends Controller
 {
