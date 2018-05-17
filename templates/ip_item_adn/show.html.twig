@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'PAGE ADN' }} {% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <div class="col-6 col-lg-offset-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title">{{ 'PAGE ADN'|upper }}</h4>
+                        {{ include('ip_item_adn/_delete_form.html.twig') }}
+                    </header>
+                    <img class="card-img-top" src="{{  asset(ip_item_adn.assertPath) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>{{ 'Titre' }}</th>
+                                <td>{{ ip_item_adn.title }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Contenu' }}</th>
+                                <td>{{ ip_item_adn.content }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Created' }}</th>
+                                <td>{{ ip_item_adn.created ? ip_item_adn.created|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-label btn-dark" href="{{ path('ip_item_adn_index') }}">
+                            <label><i class="ti-arrow-left"></i></label>
+                            {{ 'Retour à la liste'}}
+                        </a>
+                        <a class="btn btn-label btn-danger" href="{{ path('ip_item_adn_edit', {'id': ip_item_adn.id}) }}">
+                            <label><i class="ti-pencil-alt"></i></label>
+                            {{ 'Modifier' }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

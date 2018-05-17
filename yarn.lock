@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@ckeditor/ckeditor5-build-classic@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-10.0.0.tgz#c01a89bcba2ec9cea114f6cbd480d3ccb77f51cf"
+
 "@ckeditor/ckeditor5-core@^10.0.0":
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-core/-/ckeditor5-core-10.0.0.tgz#963b65d6b100e8fa2b4b8bc016aece18f59cad11"

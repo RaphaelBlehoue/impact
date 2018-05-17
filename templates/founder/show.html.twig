@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'Section fondateur' }} {% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <div class="col-6 col-lg-offset-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title">{{ 'Section fondateur'|upper }}</h4>
+                        {{ include('founder/_delete_form.html.twig') }}
+                    </header>
+                    <img class="card-img-top" src="{{  asset(founder.assertPath) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>{{ 'Nom' }}</th>
+                                <td>{{ founder.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Poste' }}</th>
+                                <td>{{ founder.office }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Contenu' }}</th>
+                                <td>{{ founder.content }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-label btn-dark" href="{{ path('founder_index') }}">
+                            <label><i class="ti-arrow-left"></i></label>
+                            {{ 'Retour à la liste'}}
+                        </a>
+                        <a class="btn btn-label btn-danger" href="{{ path('founder_edit', {'id': founder.id}) }}">
+                            <label><i class="ti-pencil-alt"></i></label>
+                            {{ 'Modifier' }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

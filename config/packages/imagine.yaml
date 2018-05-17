@@ -45,3 +45,33 @@ liip_imagine:
                     size:          [870, 521]
                     mode:          outbound
                     allow_upscale: true
+        thumb_ip_adn:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [1900, 1068]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_ip_item_adn:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [980, 688]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_ip_item_adn_small:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                thumbnail:
+                    size:          [523, 397]
+                    mode:          outbound
+                    allow_upscale: true

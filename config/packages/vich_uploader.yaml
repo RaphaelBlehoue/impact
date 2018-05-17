@@ -29,3 +29,17 @@ vich_uploader:
             delete_on_update: true
             delete_on_remove: true
             namer: vich_uploader.namer_uniqid
+        item_adn_image:
+            uri_prefix: /images/itemadn
+            upload_destination: '%kernel.project_dir%/public/images/itemadn'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+            namer: vich_uploader.namer_uniqid
+        founder_image:
+            uri_prefix: /images/founder
+            upload_destination: '%kernel.project_dir%/public/images/founder'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+            namer: vich_uploader.namer_uniqid

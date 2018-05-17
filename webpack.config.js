@@ -31,7 +31,7 @@ Encore
     .setPublicPath('/build/back')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
-    .addEntry('js/ckeditor', './assets/back/js/ckeditor.js')
+    .addEntry('js/script/editor', './assets/back/js/script/editor.js')
     .addStyleEntry('css/core', [
         './assets/back/vendor/bootstrap/css/bootstrap.min.css',
         './assets/back/vendor/font-awesome/css/font-awesome.min.css',

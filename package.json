@@ -1,5 +1,6 @@
 {
     "devDependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^10.0.0",
         "@ckeditor/ckeditor5-editor-classic": "^10.0.0",
         "@ckeditor/ckeditor5-enter": "^10.0.0",
         "@ckeditor/ckeditor5-typing": "^10.0.0",

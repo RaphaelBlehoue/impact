@@ -1,0 +1,46 @@
+{% extends 'admin.html.twig' %}
+{% block title %}{{ 'Page ADN Contenu' }}{% endblock %}
+{% block body %}
+    <div class="col-12">
+        <div class="card">
+            <header class="card-header">
+                <h4 class="card-title">{{ 'Page ADN'|upper }}</h4>
+                <a class="btn btn-label btn-info" href="{{ path('ip_item_adn_new') }}">
+                    <label><i class="ti-plus"></i></label>
+                    {{ 'Ajouter le contenu'}}
+                </a>
+            </header>
+            <div class="card-body">
+                <table class="table table-striped table-bordered" cellspacing="0" data-provide="datatables">
+                    <thead>
+                    <tr>
+                        <th>{{'Titre'}}</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>{{'Titre'}}</th>
+                        <th>actions</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for ip_item_adn in ip_item_adns %}
+                        <tr>
+                            <td>{{ ip_item_adn.title }}</td>
+                            <td>
+                                <a href="{{ path('ip_item_adn_show', {'id': ip_item_adn.id}) }}" class="btn btn-primary">{{ 'Afficher' }}</a>
+                                <a href="{{ path('ip_item_adn_edit', {'id': ip_item_adn.id}) }}" class="btn btn-danger">{{ 'Modifier' }}</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="7">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -17,6 +17,8 @@ class IpadnController extends Controller
 {
     /**
      * @Route("/", name="ipadn_index", methods="GET")
+     * @param IpadnRepository $ipadnRepository
+     * @return Response
      */
     public function index(IpadnRepository $ipadnRepository): Response
     {
@@ -25,6 +27,8 @@ class IpadnController extends Controller
 
     /**
      * @Route("/new", name="ipadn_new", methods="GET|POST")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -48,6 +52,8 @@ class IpadnController extends Controller
 
     /**
      * @Route("/{id}", name="ipadn_show", methods="GET")
+     * @param Ipadn $ipadn
+     * @return Response
      */
     public function show(Ipadn $ipadn): Response
     {
@@ -56,6 +62,9 @@ class IpadnController extends Controller
 
     /**
      * @Route("/{id}/edit", name="ipadn_edit", methods="GET|POST")
+     * @param Request $request
+     * @param Ipadn $ipadn
+     * @return Response
      */
     public function edit(Request $request, Ipadn $ipadn): Response
     {
@@ -65,7 +74,7 @@ class IpadnController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ipadn_edit', ['id' => $ipadn->getId()]);
+            return $this->redirectToRoute('ipadn_index');
         }
 
         return $this->render('ipadn/edit.html.twig', [
@@ -76,6 +85,9 @@ class IpadnController extends Controller
 
     /**
      * @Route("/{id}", name="ipadn_delete", methods="DELETE")
+     * @param Request $request
+     * @param Ipadn $ipadn
+     * @return Response
      */
     public function delete(Request $request, Ipadn $ipadn): Response
     {

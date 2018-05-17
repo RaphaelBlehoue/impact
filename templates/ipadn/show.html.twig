@@ -1,12 +1,12 @@
 {% extends 'admin.html.twig' %}
-{% block title %} {{ 'ADN PAGE' }} {% endblock %}
+{% block title %} {{ 'PAGE ADN' }} {% endblock %}
 {% block body %}
     <div class="row">
         <div class="container">
             <div class="col-6 col-lg-offset-6">
                 <div class="card">
                     <header class="card-header">
-                        <h4 class="card-title">{{ 'ADN PAGE'|upper }}</h4>
+                        <h4 class="card-title">{{ 'PAGE ADN'|upper }}</h4>
                         {{ include('ipadn/_delete_form.html.twig') }}
                     </header>
                     <img class="card-img-top" src="{{  asset(ipadn.assertPath) }}" alt="Card image cap">
