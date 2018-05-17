@@ -1,0 +1,53 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'Section contact' }} {% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <div class="col-6 col-lg-offset-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title">{{ 'section contact'|upper }}</h4>
+                        {{ include('information/_delete_form.html.twig') }}
+                    </header>
+                    <img class="card-img-top" src="{{  asset(information.assertPath) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>{{ 'Pays' }}</th>
+                                <td>{{ information.country }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Phone' }}</th>
+                                <td>{{ information.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Adresse' }}</th>
+                                <td>{{ information.address }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Email' }}</th>
+                                <td>{{ information.mail }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'Ville' }}</th>
+                                <td>{{ information.city }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-label btn-dark" href="{{ path('information_index') }}">
+                            <label><i class="ti-arrow-left"></i></label>
+                            {{ 'Retour à la liste'}}
+                        </a>
+                        <a class="btn btn-label btn-danger" href="{{ path('information_edit', {'id': information.id}) }}">
+                            <label><i class="ti-pencil-alt"></i></label>
+                            {{ 'Modifier' }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

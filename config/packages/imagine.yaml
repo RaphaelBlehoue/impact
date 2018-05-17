@@ -5,7 +5,7 @@ liip_imagine:
     filter_sets:
         # an example thumbnail transformation definition
         # https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html#create-thumbnails
-        thumb_medium:
+        thumb_369_220:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -15,7 +15,7 @@ liip_imagine:
                     size:          [369, 220]
                     mode:          outbound
                     allow_upscale: true
-        thumb_partner:
+        thumb_235_108:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -25,17 +25,7 @@ liip_imagine:
                     size:          [235, 108]
                     mode:          outbound
                     allow_upscale: true
-        thumb_service:
-            jpeg_quality:          95
-            png_compression_level: 8
-            filters:
-                auto_rotate: ~
-                strip: ~
-                thumbnail:
-                    size:          [570, 388]
-                    mode:          outbound
-                    allow_upscale: true
-        thumb_blog:
+        thumb_870_521:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -45,7 +35,7 @@ liip_imagine:
                     size:          [870, 521]
                     mode:          outbound
                     allow_upscale: true
-        thumb_ip_adn:
+        thumb_1900_1068:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -55,7 +45,7 @@ liip_imagine:
                     size:          [1900, 1068]
                     mode:          outbound
                     allow_upscale: true
-        thumb_ip_item_adn:
+        thumb_980_688:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -65,7 +55,7 @@ liip_imagine:
                     size:          [980, 688]
                     mode:          outbound
                     allow_upscale: true
-        thumb_ip_item_adn_small:
+        thumb_523_397:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -75,7 +65,7 @@ liip_imagine:
                     size:          [523, 397]
                     mode:          outbound
                     allow_upscale: true
-        thumb_approch:
+        thumb_478:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -85,7 +75,7 @@ liip_imagine:
                     size:          [478, 478]
                     mode:          outbound
                     allow_upscale: true
-        thumb_metier:
+        thumb_378_283:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -95,7 +85,7 @@ liip_imagine:
                     size:          [378, 283]
                     mode:          outbound
                     allow_upscale: true
-        thumb_info_small:
+        thumb_569_285:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -105,7 +95,7 @@ liip_imagine:
                     size:          [569, 285]
                     mode:          outbound
                     allow_upscale: true
-        thumb_info:
+        thumb_903_452:
             jpeg_quality:          95
             png_compression_level: 8
             filters:
@@ -113,5 +103,35 @@ liip_imagine:
                 strip:
                 thumbnail:
                     size:          [903, 452]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_406_341:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip:
+                thumbnail:
+                    size:          [406, 341]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_619_436:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip:
+                thumbnail:
+                    size:          [619, 436]
+                    mode:          outbound
+                    allow_upscale: true
+        thumb_1900_1000:
+            jpeg_quality:          95
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip:
+                thumbnail:
+                    size:          [1900, 1000]
                     mode:          outbound
                     allow_upscale: true

@@ -1,0 +1,17 @@
+{% extends 'admin.html.twig' %}
+{% block title %} {{ 'section video'|upper }} {% endblock %}
+{% block body %}
+    <div class="col-12">
+        <div class="card">
+            <header class="card-header">
+                <h4 class="card-title">{{ 'section video'|upper }}</h4>
+                <a class="btn btn-square btn-outline-danger" href="{{ path('video_index') }}">
+                    <label><i class="ti-na"></i></label>
+                </a>
+            </header>
+            <div class="card-body center-vh">
+                {{ include('video/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

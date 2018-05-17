@@ -4,15 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Validator\Constraints AS Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
- * @Vich\Uploadable
+ * @ORM\Entity(repositoryClass="App\Repository\ServiceRepository")
+ * @Vich\Uploadable()
  */
-class Post
+class Service
 {
     /**
      * @ORM\Id()
@@ -23,16 +22,28 @@ class Post
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotNull(message="Veuillez entrez le title")
+     * @Assert\NotBlank(message="Entrez le nom du service")
      */
     protected $title;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Description du service")
+     */
+    protected $content;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
 
     /**
      * @Assert\File(
      *     maxSize="3M",
      *     mimeTypes={"image/png", "image/jpeg", "image/jpg"}
      * )
-     * @Vich\UploadableField(mapping="post_image", fileNameProperty="imageName", size="imageSize")
+     * @Assert\NotBlank(message="Uplodez l'image d'arrière plan")
+     * @Vich\UploadableField(mapping="service_image", fileNameProperty="imageName", size="imageSize")
      * @var File $imageFile
      */
     protected $imageFile;
@@ -40,7 +51,7 @@ class Post
 
     /**
      * @ORM\Column(type="integer")
-     * 
+     *
      * @var integer
      */
     protected $imageSize;
@@ -52,35 +63,11 @@ class Post
      */
     protected $imageName;
 
-    /**
-     * @ORM\Column(type="text")
-     * @Assert\NotNull(message="Veuillez entrez un contenu")
-     */
-    protected $content;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    protected $created;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Gedmo\Slug(fields={"title", "id"}, separator="_", updatable=false)
-     */
-    protected $slug;
-
-    /**
-     * @var
-     * @ORM\ManyToOne(targetEntity="App\Entity\Subject", inversedBy="posts")
-     */
-    protected $subject;
-
 
     public function __construct()
     {
         $this->created = new \DateTime('now');
     }
-
 
     public function getId()
     {
@@ -116,22 +103,10 @@ class Post
         return $this->created;
     }
 
-    public function setCreated(?\DateTimeInterface $created): self
+    public function setCreated(\DateTimeInterface $created): self
     {
         $this->created = $created;
 
-        return $this;
-    }
-
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
         return $this;
     }
 
@@ -182,7 +157,7 @@ class Post
     public function getUploadDir()
     {
         // On retourne le chemin relatif vers l'image pour un navigateur
-        return 'images/post';
+        return 'images/service';
     }
 
     protected function getUploadRootDir()
@@ -198,17 +173,4 @@ class Post
     {
         return $this->getUploadDir().'/'.$this->imageName;
     }
-
-    public function getSubject(): ?Subject
-    {
-        return $this->subject;
-    }
-
-    public function setSubject(?Subject $subject): self
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
-    
 }

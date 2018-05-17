@@ -24,7 +24,7 @@
                 <a class="menu-link" href="{{ path('admin') }}">
                     <span class="icon ti-home"></span>
                     <span class="title">
-                        <span>Dashboard</span>
+                        <span>{{ 'Dashboard'|upper }}</span>
                     </span>
                 </a>
             </li>
@@ -66,14 +66,38 @@
             </li>
             <li class="menu-item">
                 <a class="menu-link" href="{{ path('metier_index') }}">
-                    <span class="icon ti-briefcase"></span>
+                    <span class="icon ti-plus"></span>
                     <span class="title">{{ 'section metier'|upper }}</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a class="menu-link" href="{{ path('information_index') }}">
-                    <span class="icon ti-briefcase"></span>
+                    <span class="icon ti-location-arrow"></span>
                     <span class="title">{{ 'section contact'|upper }}</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="{{ path('service_index') }}">
+                    <span class="icon ti-settings"></span>
+                    <span class="title">{{ 'section service'|upper }}</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="{{ path('subject_index') }}">
+                    <span class="icon ti-briefcase"></span>
+                    <span class="title">{{ 'catégories actualités'|upper }}</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="{{ path('post_index') }}">
+                    <span class="icon ti-info"></span>
+                    <span class="title">{{ 'section actualités'|upper }}</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="{{ path('video_index') }}">
+                    <span class="icon ti-video-camera"></span>
+                    <span class="title">{{ 'section video'|upper }}</span>
                 </a>
             </li>
         </ul>
