@@ -17,7 +17,6 @@
                     <tr>
                         <th>{{ 'Titre' }}</th>
                         <th>{{ 'Date creation' }}</th>
-                        <th>A Plus d'images</th>
                         <th>actions</th>
                     </tr>
                     </thead>
@@ -25,7 +24,6 @@
                     <tr>
                         <th>{{ 'Titre' }}</th>
                         <th>{{ 'Date creation' }}</th>
-                        <th>A Plus d'images</th>
                         <th>actions</th>
                     </tr>
                     </tfoot>
@@ -34,7 +32,6 @@
                         <tr>
                             <td>{{ post.title }}</td>
                             <td>{{ post.created ? post.created|date('Y-m-d H:i:s') : '' }}</td>
-                            <td><span class="badge badge-gray">{{ post.hasMedia ? 'OUI' : 'NON' }}</span></td>
                             <td>
                                 <a href="{{ path('post_show', {'id': post.id}) }}" class="btn btn-primary">{{ 'Afficher' }}</a>
                                 <a href="{{ path('post_edit', {'id': post.id}) }}" class="btn btn-danger">{{ 'Modifier' }}</a>

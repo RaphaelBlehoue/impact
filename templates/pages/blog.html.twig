@@ -28,25 +28,25 @@
             <div class="row">
                 <div class="tg-blogpost tg-blogpostvtwo tg-blogpostvseven">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        {% for i in 1..30 %}
+                        {% for post in posts %}
                             <article class="tg-post">
                                 <figure>
-                                    <a href="{{ path('page_blog_detail') }}"><img src="{{ asset('build/global/static/images/blog/img-47.jpg') }}" alt="image description"></a>
-                                    <span class="tg-postcategory">work</span>
+                                    <a href="{{ path('page_blog_detail', {'id': post.id }) }}"><img src="{{ post.assertPath|imagine_filter('thumb_402_254') }}" alt="{{ post.title }}"></a>
+                                    <span class="tg-postcategory">{{ post.subject.title }}</span>
                                 </figure>
                                 <div class="tg-postcontent">
                                     <div class="tg-posttitle">
-                                        <h3><a href="{{ path('page_blog_detail') }}">Inspired by Italian Style</a></h3>
+                                        <h3><a href="{{ path('page_blog_detail', {'id': post.id }) }}">{{ post.title }}</a></h3>
                                     </div>
                                     <div class="tg-description">
-                                        <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, We travel Roswell sententiae.</p>
+                                        {{ post.content|truncate(150, '', '...')|raw }}
                                     </div>
                                     <ul class="tg-postmetadata">
                                         <li>
-                                            <figure><a href="{{ path('page_blog_detail') }}"><img src="{{ asset('build/global/static/images/allhome/1/img-09.jpg') }}" alt="image description"></a></figure>
-                                            <span>Par <a href="{{ path('page_blog_detail') }}">Admin</a></span>
+                                            <figure><a href="{{ path('page_blog_detail', {'id': post.id }) }}"><img src="{{ asset('build/global/static/images/allhome/1/img-09.jpg') }}" alt="{{ post.title }}"></a></figure>
+                                            <span>Par <a href="{{ path('page_blog_detail', {'id': post.id }) }}">Admin</a></span>
                                         </li>
-                                        <li><time datetime="2017-07-07">25 Sep {{ 'now'|date('Y') }}</time></li>
+                                        <li><time datetime="{{ post.created|date('d m Y') }}">{{ post.created|date('d m Y') }}</time></li>
                                     </ul>
                                 </div>
                             </article>

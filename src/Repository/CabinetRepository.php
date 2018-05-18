@@ -19,6 +19,15 @@ class CabinetRepository extends ServiceEntityRepository
         parent::__construct($registry, Cabinet::class);
     }
 
+    public function findOne()
+    {
+        return $this->createQueryBuilder('c')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Cabinet[] Returns an array of Cabinet objects
 //     */

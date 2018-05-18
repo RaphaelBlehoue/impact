@@ -8,32 +8,36 @@
     <section class="tg-sectionspace tg-haslayout tg-paddingbottomzero">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-push-2 col-lg-8">
-                    <div class="tg-sectionhead tg-sectionheadvtwo">
-                        <div class="tg-sectiontitle">
-                            <h2>{{'Notre ADN'|upper }}</h2>
-                        </div>
-                        <div class="tg-description">
-                            <p>Mauris in rutrum nunc. Aenean in lectus id mi sollicitudin placerat. Sed porta ac libero eget maximus. Donec dictum, sem quis ullamcorper porta,</p>
+                {% for head in adn %}
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-push-2 col-lg-8">
+                        <div class="tg-sectionhead tg-sectionheadvtwo">
+                            <div class="tg-sectiontitle">
+                                <h2>{{ head.name|upper }}</h2>
+                            </div>
+                            <div class="tg-description">
+                                <p>{{ head.smallContent|raw|truncate('300', '', '...') }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
                 <div class="tg-features">
-                    {% for i in 1..4 %}
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tg-mb20">
-                            <div class="tg-feature">
-                                <figure><a href="{{ path('page_adn') }}#tg-{{ loop.index }}"><img src="{{ asset('build/global/images/allhomes/1/img-01.jpg') }}" alt="image description"></a></figure>
-                                <div class="tg-featurecontent">
-                                    <div class="tg-title tg-titlevone">
-                                        <span class="tg-count">0{{ loop.index }}</span>
-                                        <h3><span>Easy-to-Use</span>Company Analysis</h3>
-                                    </div>
-                                    <div class="tg-description">
-                                        <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat, et epicurei euripidis mei dolor sit amet, consectetuer adipiscing elit.</p>
+                    {% for itemadn in adn.0.ipitemadn %}
+                        {% if adn.0.ipitemadn|length > 0 %}
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tg-mb20">
+                                <div class="tg-feature">
+                                    <figure><a href="{{ path('page_adn') }}#tga-{{ itemadn.id }}"><img src="{{ asset(itemadn.assertPath|imagine_filter('thumb_523_397')) }}" alt="{{ itemadn.title }}"></a></figure>
+                                    <div class="tg-featurecontent">
+                                        <div class="tg-title tg-titlevone">
+                                            <span class="tg-count">0{{ loop.index }}</span>
+                                            <h3><span> ADN </span>{{ itemadn.title }}</h3>
+                                        </div>
+                                        <div class="tg-description">
+                                            <p>{{ itemadn.content|truncate('150','','...')|raw }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -55,9 +59,11 @@
                             <div class="tg-title tg-titlevone">
                                 <h3><span>{{ 'impact performances'|capitalize }} -</span>{{ 'la meilleur agence pour votre communication' }}</h3>
                             </div>
+                            {% for cabinet in cabinets %}
                             <div class="tg-description">
-                                <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat,</p>
+                                {{ cabinet.content|truncate(200,'','...')|raw }}
                             </div>
+                            {% endfor %}
                             <a class="tg-btn tg-btnblue" href="{{ path('page_agence') }}"><span>{{ 'A propos de nous'|capitalize }}</span></a>
                         </div>
                     </div>
@@ -84,16 +90,16 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-services tg-servicesvtwo">
-                        {% for i in 1..6 %}
+                        {% for metier in metiers %}
                             <div class="col-lg-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="row">
                                     <div class="tg-service">
                                         <span class="tg-serviceicon"><i class="icon-lightbulb"></i></span>
                                         <div class="tg-servicetitle">
-                                            <h3><a href="{{ path('page_metier') }}#tg-metier{{ loop.index }}">Designing Department</a></h3>
+                                            <h3><a href="{{ path('page_metier') }}#tg-metier{{ metier.id }}">{{ metier.title }}</a></h3>
                                         </div>
                                         <div class="tg-description">
-                                            <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos consequat.</p>
+                                            {{ metier.content|truncate(120, '','...')|raw }}
                                         </div>
                                     </div>
                                 </div>
@@ -123,10 +129,12 @@
                             <div class="tg-description">
                                 <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat,</p>
                             </div>
+                            {% for video in videos %}
                             <div class="tg-btnbox">
-                                <a class="tg-btnplay" href="https://www.youtube.com/watch?v=2Fca03P-Vxg" data-rel="prettyPhoto[video]"><i class="icon-play3"></i></a>
+                                <a class="tg-btnplay" href={{ video.link }}" data-rel="prettyPhoto[video]"><i class="icon-play3"></i></a>
                                 <span>{{ 'Cliquez ici pour regardez la video'|capitalize }}</span>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -150,31 +158,27 @@
                                 <div class="tg-sectiontitle">
                                     <h2>Actualités &amp; Astuces</h2>
                                 </div>
-                                <div class="tg-description">
-                                    <p>We are Talented People Our goal is to always provide an exceptional level of service.</p>
-                                </div>
                             </div>
-                            <h3><span>215</span>Articles</h3>
-                            <a class="tg-btnviewallpost" href="javascript:void(0);(0);">{{ 'Voir plus d\'articles' }}</a>
+                            <h3><span>{{ counts|length }}</span>Articles</h3>
+                            <a class="tg-btnviewallpost" href="{{ path('page_blog') }}">{{ 'Voir plus d\'articles' }}</a>
                         </div>
                     </div>
                     <div class="col-lg-12 col-sm-12 col-md-8 col-lg-8">
                         <div id="tg-postsslider" class="tg-postsslider owl-carousel tg-posts">
-                            {% for i in 1..7 %}
+                            {% for post in posts %}
                                 <div class="item">
                                     <article class="tg-post">
                                         <div class="tg-posttitle">
-                                            <h3><a href="javascript:void(0);">{{ 'titre articles N°'~ loop.index }}</a></h3>
+                                            <h3><a href="{{ path('page_blog_detail', {'id': post.id }) }}">{{ post.title }}</a></h3>
                                         </div>
                                         <div class="tg-description">
-                                            <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos dolor sit amet.</p>
+                                            {{ post.content|truncate(120, '', '...')|raw }}
                                         </div>
                                         <ul class="tg-postmetadata">
                                             <li>
-                                                <figure><a href="javascript:void(0);(0);"><img src="{{ asset('build/global/images/allhomes/1/img-12-1.jpg') }}" alt="image description"></a></figure>
-                                                <span>Par <a href="javascript:void(0);(0);">{{ 'Admin' }}</a></span>
+                                                <span>Par <a href="{{ path('page_blog_detail', {'id': post.id }) }}">{{ 'Admin' }}</a></span>
                                             </li>
-                                            <li><time datetime="2017-07-07">25 Sep 2019</time></li>
+                                            <li><time datetime="{{ post.created|date('d m Y')  }}">{{ post.created|date('d m Y')  }}</time></li>
                                         </ul>
                                     </article>
                                 </div>
@@ -201,31 +205,33 @@
                             <h2>{{ 'Ce que nous vous offrons'|upper }}</h2>
                         </div>
                         <div class="tg-description">
-                            <p>Mauris in rutrum nunc. Aenean in lectus id mi sollicitudin placerat.</p>
+                            <p>&nbsp;.</p>
                         </div>
                     </div>
                 </div>
                 <div class="tg-services tg-servicesvfive">
-                    {% for i in 1..6 %}
+                    {% for service in services %}
                         <div class="col-lg-12 col-sm-4 col-md-4 col-lg-4 tg-mb15">
-                        <div class="tg-service tg-flipbox">
-                            <div class="tg-flipper">
-                                <figure class="tg-front">
-                                    <img src="{{ asset('build/front/static/images/services/img-04.jpg') }}" height="341" width="406" alt="image description">
-                                    <figcaption>
-                                        <span class="tg-serviceicon"><i class="icon-lightbulb"></i></span>
-                                        <div class="tg-servicetitle">
-                                            <h3><span>Project Creation</span>Planning &amp; Strategy</h3>
+                        <a href="{{ path('page_service_detail', {id: service.id}) }}">
+                            <div class="tg-service tg-flipbox">
+                                <div class="tg-flipper">
+                                    <figure class="tg-front">
+                                        <img src="{{ service.assertPath|imagine_filter('thumb_406_341') }}" height="341" width="406" alt="{{ service.title }}">
+                                        <figcaption>
+                                            <span class="tg-serviceicon"><i class="icon-lightbulb"></i></span>
+                                            <div class="tg-servicetitle">
+                                                <h3>{{ service.title }}</h3>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="tg-back">
+                                        <div class="tg-description">
+                                            {{ service.content|truncate('180', '', '...')|raw }}
                                         </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="tg-back">
-                                    <div class="tg-description">
-                                        <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae salutatus consequat.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
@@ -237,50 +243,9 @@
     *************************************-->
 
     <!--************************************
-        Client Feedback Start -- a cacher en foonction du dashbord
-    *************************************-->
-    <section class="tg-haslayout" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll" data-image-src="{{ asset('build/global/images/parallax/bgparallax-03.jpg') }}">
-        <div class="tg-sectionspace tg-parallax tg-parallaxclientfeedback">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="tg-sectionhead tg-sectionheadvtwo">
-                            <div class="tg-sectiontitle">
-                                <h2>{{ 'Retour de nos clients partenaires'|capitalize }}</h2>
-                            </div>
-                        </div>
-                        <div id="tg-clientfeedbackslider" class="tg-clientfeedbackslider owl-carousel tg-clientfeedbacks">
-                            {% for i in 1..6 %}
-                                <div class="item tg-clientfeedback">
-                                    <div class="tg-box">
-                                        <h3>Great Support</h3>
-                                        <div class="tg-description">
-                                            <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat Lorem ipsum dolor sit amet.</p>
-                                        </div>
-                                    </div>
-                                    <div class="tg-clientinfo">
-                                        <figure><img src="{{ asset('build/global/images/allhomes/1/img-11-1.jpg') }}" alt="image description"></figure>
-                                        <div class="tg-namedesignation">
-                                            <h3>John Doe</h3>
-                                            <h4>Manager at GreenTech</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--************************************
-            Client Feedback End
-    *************************************-->
-
-    <!--************************************
         video Area Start
     *************************************-->
-    <section class="tg-haslayout">
+    <section class="tg-haslayout tg-sectionspace">
         <div class="container-fluid">
             <div class="row">
                 <div class="tg-introduction">
@@ -291,7 +256,7 @@
                                 <div class="tg-description">
                                     <p>{{ 'une nouvelle façon de dévélopper votre entreprise'|capitalize}}</p>
                                 </div>
-                                <a class="tg-btn tg-btnblue" href="javascript:void(0);(0);"><span>{{ 'ecrivez-nous' }}</span></a>
+                                <a class="tg-btn tg-btnblue" href="{{ path('page_contact') }}"><span>{{ 'ecrivez-nous' }}</span></a>
                             </div>
                         </div>
                     </div>
@@ -310,16 +275,29 @@
     *************************************-->
 
     <!--************************************
-        Brands Start
+    Brands Start
     *************************************-->
-    <div class="tg-sectionspace tg-haslayout tg-paddingbottomzero">
+    <div class="tg-haslayout tg-paddingbottomzero">
         <div class="container">
             <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-push-2 col-lg-8">
+                    <div class="tg-sectionhead tg-sectionheadvtwo">
+                        <div class="tg-sectiontitle">
+                            <h2>{{'ils nous ont fait confiance'|upper }}</h2>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="tg-barandsslider" class="tg-barandsslider owl-carousel tg-barands">
-                        {% for i in 1..6 %}
-                            <div class="item"><figure><a href="javascript:void(0);(0);"><img src="{{ asset('build/global/static/images/allhome/2/img-10.jpg') }}" alt="image description"></a></figure></div>
-                        {% endfor %}
+                        {% if partners|length > 0 %}
+                            {% for partner in partners %}
+                                <div class="item">
+                                    <figure>
+                                        <a href="javascript:void(0);(0);"><img src="{{ asset(partner.assertPath|imagine_filter('thumb_235_108')) }}" alt="{{ partner.assertPath  }}"></a>
+                                    </figure>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

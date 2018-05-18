@@ -33,17 +33,16 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-10 col-lg-push-1">
                             <figure class="tg-blogdetailimg">
-                                <img src="{{ asset('build/global/static/images/blog/img-60.jpg') }}" alt="image description">
+                                <img src="{{ post.assertPath|imagine_filter('thumb_960_469') }}" alt="image description">
                             </figure>
                             <div class="tg-detailbox">
-                                <h2>Designs covers for Specious Books</h2>
+                                <h2>{{ post.title }}</h2>
                                 <ul class="tg-postmetadata">
                                     <li><span>Par <a href="javascript:void(0);">Admin</a></span></li>
-                                    <li><time datetime="2017-07-07">25 Sep {{ 'now'|date('Y') }}</time></li>
+                                    <li><time datetime="2017-07-07">{{ post.created|date('d m Y') }}</time></li>
                                 </ul>
                                 <div class="tg-description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare maximus feugiat. Maecenas non vulputate orci. Maecenas non sem lacus. Curabitur sed faucibus orci, sit amet scelerisque tortor. Donec mattis, dolor sit amet lacinia tristique, turpis purus auctor risus, at sagittis mi nibh nec quam. Nulla id tincidunt velit. Integer mollis bibendum vulputate.</p>
-                                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras a nisl consectetur, laoreet ante sit amet, blandit nulla. Donec at tortor magna. Vestibulum id dolor sit amet libero sodales venenatis quis sed nisl. Integer placerat nulla vitae hendrerit molestie. Cras tincidunt cursus magna, eu eleifend mauris hendrerit lobortis. Curabitur purus dolor, iaculis ac ipsum sit amet, mattis ornare massa faucibus orci luctus et ultrices posuere cubilia .</p>
+                                    {{ post.content|raw }}
                                 </div>
                                 <div class="tg-sharepost">
                                     <ul class="tg-socialicons">
@@ -51,22 +50,6 @@
                                         <li class="tg-twitter"><a href="javascript:void(0);"><i class="icon-twitter-1"></i><span>Tweet</span></a></li>
                                         <li class="tg-linkedin"><a href="javascript:void(0);"><i class="icon-linkedin22"></i><span>Partager</span></a></li>
                                     </ul>
-                                </div>
-                                <div class="tg-author">
-                                    <figure class="tg-authorimg">
-                                        <img src="{{ asset('build/global/static/images/blog/authorimg.jpg') }}" alt="image description">
-                                    </figure>
-                                    <div class="tg-authorinfo">
-                                        <h3>Admin</h3>
-                                        <div class="tg-description">
-                                            <P>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras a nisl consectetur, laoreet ante sit amet, blandit nulla. Donec at tortor magna. Vestibulum id dolor sit amet. fringilla aliquet finibus. Donec massa tellus, porttitor non imperdiet sed, commodo vitae risus. Duis eu metus et tellus porttitor malesuada. </P>
-                                        </div>
-                                        <ul class="tg-socialicons">
-                                            <li class="tg-facebook"><a href="javascript:void(0);"><i class="icon-facebook-1"></i><span>Share</span></a></li>
-                                            <li class="tg-twitter"><a href="javascript:void(0);"><i class="icon-twitter-1"></i><span>Tweet</span></a></li>
-                                            <li class="tg-googleplus"><a href="javascript:void(0);"><i class="icon-google4"></i><span>Share</span></a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                         </div>

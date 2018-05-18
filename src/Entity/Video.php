@@ -36,7 +36,6 @@ class Video
      *     maxSize="3M",
      *     mimeTypes={"image/png", "image/jpeg", "image/jpg"}
      * )
-     * @Assert\NotBlank(message="Uplodez une images")
      * @Vich\UploadableField(mapping="video_image", fileNameProperty="imageName", size="imageSize")
      * @var File $imageFile
      */
@@ -57,6 +56,9 @@ class Video
      */
     protected $imageName;
 
+    /**
+     * Video constructor.
+     */
     public function __construct()
     {
         $this->created = new \DateTime('now');

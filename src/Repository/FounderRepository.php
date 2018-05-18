@@ -19,6 +19,15 @@ class FounderRepository extends ServiceEntityRepository
         parent::__construct($registry, Founder::class);
     }
 
+    public function findOne()
+    {
+        return $this->createQueryBuilder('f')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Founder[] Returns an array of Founder objects
 //     */

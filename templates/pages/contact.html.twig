@@ -32,34 +32,24 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <ul class="tg-address">
-                            <li>
-                                <figure>
-                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
-                                        <img src="{{ asset('build/global/images/img-02.jpg') }}" alt="image description">
-                                    </a>
-                                    <div class="tg-addresscontent">
-                                        <h2><span>{{ 'Localisation France' }}</span>{{ 'Paris' }}</h2>
-                                        <em>Phone:  (+33) 0000 0000</em>
-                                        <em>Email: <a href="mailto:info@impact-performances.com?bcc=henoh@impact-performances.com">info@impact-performances.com</a></em>
-                                        <address>Adresse: Rue x 00000 ..., Paris Côte d'ivoire</address>
-                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
-                                        <img src="{{ asset('build/global/images/img-03.jpg') }}" alt="image description">
-                                    </a>
-                                    <div class="tg-addresscontent">
-                                        <h2><span>{{ 'Localisation Côte d\'ivoire' }}</span>{{ 'Abidjan' }}</h2>
-                                        <em>Phone:  (+225) 0000 0000</em>
-                                        <em>Email: <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">info-ci@impact-performances.com</a></em>
-                                        <address>Adresse: Cocody Vallon ..., Abidjan Côte d'ivoire</address>
-                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </figure>
-                            </li>
+                            {% if contacts|length > 0 %}
+                                {% for contact in contacts %}
+                                    <li>
+                                        <figure>
+                                            <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
+                                                <img src="{{ contact.assertPath|imagine_filter('thumb_903_452') }}" alt="{{ contact.country }}">
+                                            </a>
+                                            <div class="tg-addresscontent">
+                                                <h2><span>Localisation {{ contact.country }}</span>{{ contact.country }}</h2>
+                                                <em>Phone:  {{ contact.phone }}</em>
+                                                <em>Email: <a href="mailto:{{ contact.mail }}?bcc=henoh@impact-performances.com">{{ contact.mail }}</a></em>
+                                                <address>{{ contact.address }}</address>
+                                                <a class="tg-btngetdirection" href="mailto:{{ contact.mail }}?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
+                                            </div>
+                                        </figure>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

@@ -33,15 +33,15 @@
                 <div class="tg-productderail">
                     <div id="tg-portfoliocontentfixed" class="tg-portfoliocontentholder tg-portfoliocontentfixed">
                         <div class="tg-productinfo">
-                            <h2>{{ 'Service Title here'|upper }}</h2>
+                            <h2>{{ service.title|capitalize }}</h2>
                             <div class="tg-description tg-text-justify">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal. Distribution of letters, as opposed to using 'Content here, content here',</p>
+                                {{ service.content|raw }}
                             </div>
                         </div>
                     </div>
                     <div class="tg-portfolioimgholder">
                         <figure class="tg-productimg">
-                            <img src="{{ asset('build/global/static/images/portfolio/4/img-01.jpg') }}" alt="image description">
+                            <img src="{{ service.assertPath|imagine_filter('thumb_619_436') }}" alt="image description">
                         </figure>
                     </div>
                 </div>
@@ -68,34 +68,24 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <ul class="tg-address">
-                            <li>
-                                <figure>
-                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
-                                        <img src="{{ asset('build/global/images/img-02.jpg') }}" alt="image description">
-                                    </a>
-                                    <div class="tg-addresscontent">
-                                        <h2><span>{{ 'Localisation France' }}</span>{{ 'Paris' }}</h2>
-                                        <em>Phone:  (+33) 0000 0000</em>
-                                        <em>Email: <a href="mailto:info@impact-performances.com?bcc=henoh@impact-performances.com">info@impact-performances.com</a></em>
-                                        <address>Adresse: Rue x 00000 ..., Paris Côte d'ivoire</address>
-                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
-                                        <img src="{{ asset('build/global/images/img-03.jpg') }}" alt="image description">
-                                    </a>
-                                    <div class="tg-addresscontent">
-                                        <h2><span>{{ 'Localisation Côte d\'ivoire' }}</span>{{ 'Abidjan' }}</h2>
-                                        <em>Phone:  (+225) 0000 0000</em>
-                                        <em>Email: <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">info-ci@impact-performances.com</a></em>
-                                        <address>Adresse: Cocody Vallon ..., Abidjan Côte d'ivoire</address>
-                                        <a class="tg-btngetdirection" href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </figure>
-                            </li>
+                            {% if contacts|length > 0 %}
+                                {% for contact in contacts %}
+                                    <li>
+                                        <figure>
+                                            <a href="mailto:info-ci@impact-performances.com?bcc=henoh@impact-performances.com">
+                                                <img src="{{ contact.assertPath|imagine_filter('thumb_903_452') }}" alt="{{ contact.country }}">
+                                            </a>
+                                            <div class="tg-addresscontent">
+                                                <h2><span>Localisation {{ contact.country }}</span>{{ contact.country }}</h2>
+                                                <em>Phone:  {{ contact.phone }}</em>
+                                                <em>Email: <a href="mailto:{{ contact.mail }}?bcc=henoh@impact-performances.com">{{ contact.mail }}</a></em>
+                                                <address>{{ contact.address }}</address>
+                                                <a class="tg-btngetdirection" href="mailto:{{ contact.mail }}?bcc=henoh@impact-performances.com">{{ 'Nous Ecrirer' }}<i class="fa fa-angle-right"></i></a>
+                                            </div>
+                                        </figure>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -119,10 +109,15 @@
                     </div>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="tg-barandsslider" class="tg-barandsslider owl-carousel tg-barands">
-                        {% for i in 1..6 %}
-                            <div class="item"><figure><a href="javascript:void(0);(0);"><img src="{{ asset('build/global/static/images/allhome/2/img-10.jpg') }}" alt="image description"></a></figure></div>
+                    {% if partners|length > 0 %}
+                        {% for partner in partners %}
+                            <div class="item">
+                                <figure>
+                                    <a href="javascript:void(0);(0);"><img src="{{ asset(partner.assertPath|imagine_filter('thumb_235_108')) }}" alt="{{ partner.assertPath  }}"></a>
+                                </figure>
+                            </div>
                         {% endfor %}
+                    {% endif %}
                     </div>
                 </div>
             </div>

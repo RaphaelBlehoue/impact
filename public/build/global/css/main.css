@@ -273,7 +273,7 @@ address { font-style: italic; }
 .tg-mt40 {margin-top: 40px;}
 .tg-mt50 {margin-top: 50px;}
 .tg-mt100 {margin-top: 100px;}
-.tg-text-justify {text-align: justify-all;}
+.tg-text-justify {text-align: justify;}
 
 /* =============================================
 			Theme Custom Select					
@@ -7783,7 +7783,7 @@ blockquote{
 }
 .tg-ourprocess:nth-child(even){background:#f7f7f7;}
 .tg-processcontent{
-	height:283px;
+	height:400px;
 	text-align:left;
 	overflow:hidden;
 	padding:0 70px 0 0;
@@ -7830,7 +7830,7 @@ blockquote{
 .tg-processcontent .tg-description p{
 	margin:0;
 	overflow: hidden;
-	display: -webkit-box;
+	/*display: -webkit-box;*/
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 }

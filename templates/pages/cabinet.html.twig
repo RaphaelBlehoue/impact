@@ -30,27 +30,23 @@
         <div class="container">
             <div class="row">
                 <div class="tg-whatwedo">
-                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pull-left">
-                        <div class="tg-imgshortcode">
-                            <figure><img src="{{ asset('build/global/static/images/allhome/2/img-05.jpg') }}" alt="image description"></figure>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="tg-textshortcode">
-                            <div class="tg-title tg-titlevone">
-                                <h3><span>{{ 'CEO & Fondatrice' }}</span>{{ 'Hafsa HENOH' }}</h3>
+                    {% for founder in founders %}
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pull-left">
+                            <div class="tg-imgshortcode">
+                                <figure><img src="{{ founder.assertPath|imagine_filter('thumb_425_492') }}" alt="{{ founder.name }}"></figure>
                             </div>
-                            <div class="tg-description">
-                                <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, amet Ius ne viris repudiare, nominavi sententiae. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl ipsum. Nulla sodales dui molestie velit <span>condimentum</span> ullamcorper. Nam tempus orci ut imperdiet elementum. Etiam arcu massa,</p>
-                            </div>
-                            <ul class="tg-socialicons">
-                                <li class="tg-facebook"><a href="javascript:void(0);"><i class="icon-facebook-1"></i></a></li>
-                                <li class="tg-twitter"><a href="javascript:void(0);"><i class="icon-twitter-1"></i></a></li>
-                                <li class="tg-googleplus"><a href="javascript:void(0);"><i class="icon-google4"></i></a></li>
-                            </ul>
                         </div>
-                    </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="tg-textshortcode">
+                                <div class="tg-title tg-titlevone">
+                                    <h3><span>{{ founder.office }}</span>{{ founder.name }}</h3>
+                                </div>
+                                <div class="tg-description">
+                                    {{ founder.content|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -82,14 +78,16 @@
         <div class="container">
             <div class="row">
                 <div class="tg-aboutus tg-aboutusvtwo tg-aboutcreative">
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <h2><span>{{ 'A propos de nous' }}</span>{{ 'Pourquoi un Cabinet ?'|capitalize }}</h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                        <div class="tg-description">
-                            <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat, Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae. dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat, </p>
+                    {% for cabinet in cabinets %}
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <h2><span>{{ 'A propos de nous' }}</span>{{ cabinet.name |capitalize }}</h2>
                         </div>
-                    </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                            <div class="tg-description">
+                                {{ cabinet.content|raw }}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -108,30 +106,30 @@
                                 <h2>{{ 'Notre approche' }}</h2>
                             </div>
                             <div class="tg-description">
-                                <p>Mauris in rutrum nunc. Aenean in lectus id mi sollicitudin placerat Sed porta All Members</p>
+                                <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="tg-themetabs tg-creativetabs">
                             <ul class="tg-themetabnav" role="tablist">
-                                {% for i in 1..5 %}
+                                {% for approch in approchs %}
                                     <li role="presentation" {% if loop.first %} class="active" {% endif %}><a href="#etape{{ loop.index }}" aria-controls="{{ loop.index }}" role="tab" data-toggle="tab">{{"Etape " ~ loop.index }}</a></li>
                                 {% endfor %}
                             </ul>
                             <div class="tab-content tg-themetabcontent">
-                                {% for i in 1..5 %}
+                                {% for approch in approchs %}
                                     <div role="tabpanel" class="tab-pane {% if loop.first %} active {% endif %} fade in" id="etape{{ loop.index }}">
                                         <div class="row">
                                             <div class="tg-creativetabcontent">
                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <h2>Approche {{ loop.index }}</h2>
+                                                    <h2>{{ approch.title }}</h2>
                                                     <div class="tg-description">
-                                                        <p>Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in. Et duo salutatus consequat, Lorem ipsum dolor sit amet, eu per legimus referrentur.</p>
+                                                        {{ approch.content|raw }}
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <figure><img src="{{ asset('build/global/static/images/img-01.jpg') }}" alt="{{ 'Approche' }}"></figure>
+                                                    <figure><img src="{{ approch.assertPath|imagine_filter('thumb_478') }}" alt="{{ approch.title }}"></figure>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,10 +138,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>
@@ -160,9 +154,15 @@
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="tg-barandsslider" class="tg-barandsslider owl-carousel tg-barands">
-                        {% for i in 1..6 %}
-                            <div class="item"><figure><a href="javascript:void(0);(0);"><img src="{{ asset('build/global/static/images/allhome/2/img-10.jpg') }}" alt="image description"></a></figure></div>
-                        {% endfor %}
+                        {% if partners|length > 0 %}
+                            {% for partner in partners %}
+                                <div class="item">
+                                    <figure>
+                                        <a href="javascript:void(0);(0);"><img src="{{ asset(partner.assertPath|imagine_filter('thumb_235_108')) }}" alt="{{ partner.assertPath  }}"></a>
+                                    </figure>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@ class InformationType extends AbstractType
             ])
             ->add('address', TextType::class, [
                 'label' => 'Renseignez l\'adresse',
-                'attr' => ['placeholder' => 'Renseignez l\'adresse ici']
+                'attr' => ['placeholder' => 'Format: Rue x 00000 ..., Paris Côte d\'ivoire']
             ])
             ->add('mail', EmailType::class, [
                 'label' => 'Renseignez le mail',

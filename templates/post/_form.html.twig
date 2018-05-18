@@ -1,6 +1,7 @@
 <div class="card card-round card-shadowed px-50 py-30 w-700px mb-0" style="max-width: 100%">
     <h5 class="text-uppercase">{{ 'Creer un article du Blog' }}</h5>
     <br>
+    <span class="badge-info badge">{{ 'Taille de l\'image récommandée :' }} <strong class="badge-danger badge">min: 402x254 & max:960x469 </strong></span>
     {{ form_start(form, {'attr': {'class': 'card', novalidate: 'novalidate'} } ) }}
     <div class="form-group">
         {{ form_widget(form) }}

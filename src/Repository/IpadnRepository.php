@@ -19,6 +19,17 @@ class IpadnRepository extends ServiceEntityRepository
         parent::__construct($registry, Ipadn::class);
     }
 
+    
+    public function findAllWithChildren()
+    {
+        return $this->createQueryBuilder('i')
+            ->leftJoin('i.ipitemadn', 'ip')
+            ->addSelect('ip')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Ipadn[] Returns an array of Ipadn objects
 //     */
